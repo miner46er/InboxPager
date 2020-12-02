@@ -1,5 +1,7 @@
 package gnu.crypto.cipher;
 
+import net.inbox.sha3.Sha3;
+
 import java.security.InvalidKeyException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -96,8 +98,9 @@ public final class Shamaq extends BaseCipher {
       return Collections.unmodifiableList(al).iterator();
    }
 
-   public Object makeKey(byte[] uk, int bs) throws InvalidKeyException {
-      final byte[] keyData = new byte[bs * 8]; // TODO: Use SHA-3 later
+   public Object makeKey(byte[] uk, int bs) {
+      Sha3 sha3 = new Sha3(256);
+      final byte[] keyData = sha3.digest(uk);
 
       final byte[][] roundKeys = new byte[ROUNDS][bs / 2];
 
