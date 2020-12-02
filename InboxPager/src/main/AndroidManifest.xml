@@ -39,6 +39,7 @@
             android:configChanges="orientation|screenSize"/>
         <activity android:name=".Settings"/>
         <activity android:name=".InboxGPG" android:label="OpenPGP"/>
+        <activity android:name=".ECDSAActivity" android:label="ECDSA"/>
     </application>
 
 </manifest>

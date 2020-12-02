@@ -330,6 +330,7 @@
     <string name="digsig_finish" translatable="false">FINISH</string>
     <string name="digsig_header_preview" translatable="false">SIGNATURE PREVIEW</string>
     <string name="digsig_import_keys" translatable="false">Import key from file</string>
+    <string name="digsig_generate_keys" translatable="false">Generate and export keys</string>
     <string name="digsig_no_key" translatable="false">Input key manually...</string>
 
     <!-- Other Crypto -->

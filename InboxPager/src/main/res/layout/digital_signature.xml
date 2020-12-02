@@ -84,6 +84,12 @@
                 android:layout_width="wrap_content"
                 android:text="@string/digsig_import_keys"/>
 
+            <Button
+                android:id="@+id/b_key_generate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/digsig_generate_keys" />
+
             <EditText
                 android:id="@+id/et_digital_signature"
                 android:inputType="textMultiLine"

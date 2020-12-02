@@ -207,7 +207,7 @@ public class InboxSend extends AppCompatActivity {
                         s_replace_end = et_contents.getSelectionEnd();
 
                         // Open dialog for decryption
-                        dialog_txt_crypto();
+                            dialog_txt_crypto();
 
                         mode.finish();
                         return true;
@@ -278,6 +278,17 @@ public class InboxSend extends AppCompatActivity {
                     if (et_contents.getText().toString().isEmpty()) {
                         toaster(true, v.getContext().getString(R.string.crypto_no_text));
                     } else dialog_txt_crypto();
+                }
+            });
+
+            ImageView iv_encryption_ecdsa = findViewById(R.id.iv_encryption_ecdsa);
+            iv_encryption_ecdsa.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (et_contents.getText().toString().isEmpty()) {
+                        toaster(true, v.getContext().getString(R.string.crypto_no_text));
+                    } else to_sign_ecdsa();
                 }
             });
 
@@ -408,6 +419,8 @@ public class InboxSend extends AppCompatActivity {
                     et_contents.setText(current.get_contents_crypto());
                 }
             }
+        } else if (resultCode == ECDSAActivity.RESULT_CODE) {
+            et_contents.setText(data.getStringExtra("signed-message"));
         }
     }
 
@@ -857,6 +870,12 @@ public class InboxSend extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void to_sign_ecdsa() {
+        Intent ecdsa = new Intent(this, ECDSAActivity.class);
+        ecdsa.putExtra("message-data", msg_contents);
+        startActivityForResult(ecdsa, 123, null);
     }
 
     private boolean check_readable() {
