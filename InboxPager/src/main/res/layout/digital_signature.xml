@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/digital_signature_activity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/send_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_home_bar_background"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/tv_finish"
+            style="@style/action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="7sp"
+            android:background="@drawable/btn_green"
+            android:text="@string/digsig_finish" />
+
+        <TextView
+            android:id="@+id/tv_remove"
+            style="@style/action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="7sp"
+            android:background="@drawable/btn_orange"
+            android:text="@string/digsig_remove" />
+
+        <TextView
+            android:id="@+id/tv_sign"
+            style="@style/action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="7sp"
+            android:background="@drawable/btn_green"
+            android:text="@string/digisig_sign" />
+
+        <TextView
+            android:id="@+id/digital_signature_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/dottz"
+            android:letterSpacing="0.1"
+            android:maxLines="1"
+            android:paddingLeft="0sp"
+            android:paddingTop="4sp"
+            android:paddingRight="0sp"
+            android:paddingBottom="4sp"
+            android:shadowColor="@color/color_title"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="3"
+            android:textAppearance="@android:style/TextAppearance.Medium.Inverse"
+            android:textColor="@color/color_title"
+            android:visibility="visible"
+            android:text="@string/digsig_title" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <Spinner
+                android:id="@+id/spinner_digital_signature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:spinnerMode="dialog"
+                android:dropDownWidth="match_parent"
+                android:popupTheme="@android:style/ThemeOverlay.Material.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:backgroundTint="@color/color_orange"
+                android:background="@drawable/spinner_selector" />
+
+            <Button
+                android:id="@+id/digital_signature_import_keys"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/digsig_import_keys"/>
+
+            <TextView
+                android:id="@+id/tv_sign_private"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:paddingBottom="15sp"
+                android:text="@string/digsig_private_cross" />
+
+            <TextView
+                android:id="@+id/tv_sign_public_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:paddingBottom="15sp"
+                android:text="@string/digsig_public_one_cross" />
+
+            <TextView
+                android:id="@+id/tv_sign_public_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:paddingBottom="15sp"
+                android:text="@string/digsig_public_two_cross" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:text="@string/digsig_preview_message"
+                android:textAppearance="@android:style/TextAppearance"
+                android:textColor="@color/color_message_headers" />
+
+            <TextView
+                android:id="@+id/tv_encrypted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:paddingTop="5sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:text="@string/digsig_preview_signature"
+                android:textAppearance="@android:style/TextAppearance"
+                android:textColor="@color/color_message_headers" />
+
+            <TextView
+                android:id="@+id/tv_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:paddingTop="5sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
