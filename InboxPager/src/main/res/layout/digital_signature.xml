@@ -78,74 +78,36 @@
             android:orientation="vertical"
             android:padding="10sp">
 
-            <Spinner
-                android:id="@+id/spinner_digital_signature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:spinnerMode="dialog"
-                android:dropDownWidth="match_parent"
-                android:popupTheme="@android:style/ThemeOverlay.Material.Light"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                android:backgroundTint="@color/color_orange"
-                android:background="@drawable/spinner_selector" />
-
             <Button
-                android:id="@+id/digital_signature_import_keys"
+                android:id="@+id/b_key_import"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/digsig_import_keys"/>
 
-            <TextView
-                android:id="@+id/tv_sign_private"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15sp"
-                android:paddingBottom="15sp"
-                android:text="@string/digsig_private_cross" />
-
-            <TextView
-                android:id="@+id/tv_sign_public_one"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15sp"
-                android:paddingBottom="15sp"
-                android:text="@string/digsig_public_one_cross" />
-
-            <TextView
-                android:id="@+id/tv_sign_public_two"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15sp"
-                android:paddingBottom="15sp"
-                android:text="@string/digsig_public_two_cross" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15sp"
-                android:text="@string/digsig_preview_message"
-                android:textAppearance="@android:style/TextAppearance"
-                android:textColor="@color/color_message_headers" />
-
-            <TextView
-                android:id="@+id/tv_encrypted"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
+            <EditText
+                android:id="@+id/et_digital_signature"
+                android:inputType="textMultiLine"
+                android:minLines="5"
                 android:maxLines="5"
-                android:paddingTop="5sp" />
+                android:gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15sp"
+                android:paddingBottom="15sp"
+                android:scrollbars="vertical"
+                android:autofillHints=""
+                android:hint="@string/digsig_no_key" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15sp"
-                android:text="@string/digsig_preview_signature"
+                android:text="@string/digsig_header_preview"
                 android:textAppearance="@android:style/TextAppearance"
                 android:textColor="@color/color_message_headers" />
 
             <TextView
-                android:id="@+id/tv_signature"
+                android:id="@+id/tv_signature_preview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
