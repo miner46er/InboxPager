@@ -48,6 +48,7 @@ public class ECDSAActivity extends AppCompatActivity {
         setContentView(R.layout.digital_signature);
 
         originalMessage = getIntent().getStringExtra("message-data");
+        System.out.println(originalMessage);
         requestCode = getIntent().getIntExtra("request-code", 0);
 
         ecdsaHelper = new ECDSAHelper();
@@ -86,6 +87,7 @@ public class ECDSAActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 intent.putExtra("signed-message", ecdsaHelper.sign(originalMessage));
                 setResult(RESULT_CODE, intent);
+                finish();
             }
         });
 

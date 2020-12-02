@@ -874,7 +874,9 @@ public class InboxSend extends AppCompatActivity {
 
     private void to_sign_ecdsa() {
         Intent ecdsa = new Intent(this, ECDSAActivity.class);
-        ecdsa.putExtra("message-data", msg_contents);
+        Bundle bundle = new Bundle();
+        bundle.putString("message-data", et_contents.getText().toString());
+        ecdsa.putExtras(bundle);
         startActivityForResult(ecdsa, 123, null);
     }
 
