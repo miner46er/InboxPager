@@ -30,7 +30,7 @@ import gnu.crypto.pad.PadFactory;
 
 public class EndToEnd {
 
-    public final static String[] cipher_types = new String[]{ "AES", "Twofish" };
+    public final static String[] cipher_types = new String[]{ "AES", "Twofish", "Shamaq" };
     public final static String[] cipher_modes = new String[]{ "CBC", "CTR", "ECB", "ICM", "OFB" };
     public final static String[] cipher_paddings = new String[]{ "PKCS7", "TBC" };
 

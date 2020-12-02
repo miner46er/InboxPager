@@ -79,6 +79,8 @@ public class CipherFactory implements Registry {
          result = new Rijndael();
       } else if (name.equalsIgnoreCase(TWOFISH_CIPHER)) {
          result = new Twofish();
+      } else if (name.equalsIgnoreCase(SHAMAQ_CIPHER)) {
+         result = new Shamaq();
       } else if (name.equalsIgnoreCase(NULL_CIPHER)) {
          result = new NullCipher();
       }
@@ -100,6 +102,7 @@ public class CipherFactory implements Registry {
       HashSet<String> hs = new HashSet<>();
       hs.add(RIJNDAEL_CIPHER);// AES
       hs.add(TWOFISH_CIPHER);
+      hs.add(SHAMAQ_CIPHER);
       hs.add(NULL_CIPHER);
 
       return Collections.unmodifiableSet(hs);

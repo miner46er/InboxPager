@@ -50,6 +50,7 @@ public interface Registry {
 
    String RIJNDAEL_CIPHER = "rijndael";
    String TWOFISH_CIPHER = "twofish";
+   String SHAMAQ_CIPHER = "shamaq";
    String NULL_CIPHER = "null";
 
    // AES is synonymous to Rijndael for 128-bit block size only.

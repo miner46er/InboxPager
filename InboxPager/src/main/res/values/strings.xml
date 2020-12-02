@@ -347,6 +347,7 @@
     <string-array name="crypto_ciphers">
         <item translatable="false">AES</item>
         <item translatable="false">Twofish</item>
+        <item translatable="false">Shamaq</item>
     </string-array>
 
     <!-- Values must match those in crypto class -->
