@@ -365,13 +365,18 @@ public class InboxMessage extends AppCompatActivity {
 
                 @Override
                 public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                    if (item.getGroupId() == R.id.gnu_crypts) {
+                    if (item.getItemId() == R.id.menu_gnu_decrypt || item.getItemId() == R.id.menu_gnu_encrypt) {
                         // Set selection parameters
                         s_replace_start = tv_contents.getSelectionStart();
                         s_replace_end = tv_contents.getSelectionEnd();
 
                         // Open dialog for decryption
                         dialog_txt_crypto();
+
+                        mode.finish();
+                        return true;
+                    } else if (item.getItemId() == R.id.menu_ecdsa_verify) {
+                        to_verify_ecdsa();
 
                         mode.finish();
                         return true;
@@ -1220,5 +1225,19 @@ public class InboxMessage extends AppCompatActivity {
                     .getString(R.string.crypto_failure), this);
             Dialogs.toaster(true, e.getMessage(), this);
         }
+    }
+
+    private void to_verify_ecdsa() {
+        // Set selection parameters
+        s_replace_start = tv_contents.getSelectionStart();
+        s_replace_end = tv_contents.getSelectionEnd();
+
+        Intent ecdsa = new Intent(this, ECDSAActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("message-data", tv_contents.getText().toString()
+                .substring(s_replace_start, s_replace_end));
+        bundle.putInt("request-code", ECDSAActivity.ECDSA_VERIFY_REQUEST_CODE);
+        ecdsa.putExtras(bundle);
+        startActivityForResult(ecdsa, 123, null);
     }
 }

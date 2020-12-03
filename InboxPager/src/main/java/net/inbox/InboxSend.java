@@ -109,9 +109,6 @@ public class InboxSend extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Prevent Android Switcher leaking data via screenshots
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-                WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.send);
 
         try {
@@ -876,6 +873,7 @@ public class InboxSend extends AppCompatActivity {
         Intent ecdsa = new Intent(this, ECDSAActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("message-data", et_contents.getText().toString());
+        bundle.putInt("request-code", ECDSAActivity.ECDSA_SIGN_REQUEST_CODE);
         ecdsa.putExtras(bundle);
         startActivityForResult(ecdsa, 123, null);
     }

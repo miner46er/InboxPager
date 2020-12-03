@@ -2,10 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/gnu_crypts">
         <item
+            android:id="@+id/menu_gnu_decrypt"
+            android:title="@string/crypto_decrypt" />
+        <item
             android:id="@+id/menu_gnu_encrypt"
             android:title="@string/crypto_encrypt" />
         <item
-            android:id="@+id/menu_gnu_decrypt"
-            android:title="@string/crypto_decrypt" />
+            android:id="@+id/menu_ecdsa_verify"
+            android:title="@string/digsig_menu_verify" />
     </group>
 </menu>

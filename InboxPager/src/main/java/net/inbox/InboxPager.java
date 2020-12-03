@@ -121,10 +121,6 @@ public class InboxPager extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Prevent Android Switcher leaking data via screenshots
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-                WindowManager.LayoutParams.FLAG_SECURE);
-
         // Restore existing state
         if (savedInstanceState != null) {
             log = savedInstanceState.getString("sv_log");

@@ -38,7 +38,7 @@ public class Signature {
         return kG;
     }
 
-    public static boolean messageVerify(String msg, BigInteger[] sign, BigInteger n, BigInteger p, BigInteger[] G, BigInteger a, BigInteger[] pbkQ) throws NoSuchAlgorithmException {
+    public static boolean messageVerify(String msg, BigInteger[] sign, BigInteger n, BigInteger p, BigInteger[] G, BigInteger a, BigInteger[] pbkQ) {
 
         BigInteger r = sign[0];
         BigInteger s = sign[1];

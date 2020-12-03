@@ -326,12 +326,18 @@
     <!-- Digital Signature -->
     <string name="digsig_title" translatable="false">DIGITAL SIGNATURE</string>
     <string name="digisig_sign" translatable="false">SIGN</string>
+    <string name="digsig_verify" translatable="false">VERIFY</string>
     <string name="digsig_remove" translatable="false">REMOVE</string>
     <string name="digsig_finish" translatable="false">FINISH</string>
     <string name="digsig_header_preview" translatable="false">SIGNATURE PREVIEW</string>
+    <string name="digsig_header_verify" translatable="false">VERIFICATION STATUS</string>
     <string name="digsig_import_keys" translatable="false">Import key from file</string>
     <string name="digsig_generate_keys" translatable="false">Generate and export keys</string>
     <string name="digsig_no_key" translatable="false">Input key manually...</string>
+    <string name="digsig_key_invalid" translatable="false">Key Invalid!</string>
+    <string name="digsig_signature_verified" translatable="false">Signature Verified!</string>
+    <string name="digsig_signature_invalid" translatable="false">Signature Invalid!</string>
+    <string name="digsig_menu_verify" translatable="false">🖊️ Verify</string>
 
     <!-- Other Crypto -->
     <string name="empty_string" translatable="false"/>

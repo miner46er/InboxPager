@@ -2,14 +2,12 @@ package gnu.crypto.cipher;
 
 import net.inbox.sha3.Sha3;
 
-import java.security.InvalidKeyException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 
 import gnu.crypto.Registry;
-import gnu.crypto.util.Util;
 
 public final class Shamaq extends BaseCipher {
    private static final int DEFAULT_BLOCK_SIZE = 8; // in bytes
@@ -91,7 +89,7 @@ public final class Shamaq extends BaseCipher {
 
    public Iterator<Integer> keySizes() {
       ArrayList<Integer> al = new ArrayList<>();
-      for (int n = 8; n < 64; n+=2) {
+      for (int n = 8; n <= 64; n++) {
          al.add(n);
       }
 
@@ -99,7 +97,7 @@ public final class Shamaq extends BaseCipher {
    }
 
    public Object makeKey(byte[] uk, int bs) {
-      Sha3 sha3 = new Sha3(256);
+      Sha3 sha3 = new Sha3(512);
       final byte[] keyData = sha3.digest(uk);
 
       final byte[][] roundKeys = new byte[ROUNDS][bs / 2];
@@ -132,6 +130,7 @@ public final class Shamaq extends BaseCipher {
 
    private void rotR(byte[] data, int rot) {
       rot %= data.length;
+      rot = rot < 0 ? rot + data.length : rot;
       byte[] temp = Arrays.copyOfRange(data, 0, data.length);
 
       System.arraycopy(temp, rot, data, 0, data.length - rot);
@@ -142,7 +141,7 @@ public final class Shamaq extends BaseCipher {
       byte[] L = Arrays.copyOfRange(in, 0, bs / 2);
       byte[] R = Arrays.copyOfRange(in, bs / 2, bs);
 
-      byte[] Rprime = out;
+      byte[] Rprime = new byte[bs / 2];
       xor(R, key, Rprime);
       sub(Rprime);
       rotR(Rprime, key[0]);
